@@ -11,6 +11,7 @@ body {
 a{
   font-family: 'Open sans',sans-serif;
   font-size: 20px !important;
+  font-weight: 400 !important;
 }
 
 .home-screen {
@@ -49,6 +50,9 @@ a{
   border-bottom-right-radius: 50px;
 }
 
+#frame{
+  border-radius: 25px;
+}
 #navigation-bar > .nav-item {
   padding: 10px 25px;
   transition: transform 0.3s ease-in-out, background-color 0.3s, color 0.3s;
