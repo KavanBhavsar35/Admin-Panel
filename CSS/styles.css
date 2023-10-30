@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  background-image: url('../Images/bg.svg');
+  background-image: url('../Images/bg.svg') !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 a{
   font-family: 'Open sans',sans-serif;
@@ -68,6 +70,14 @@ a{
 #navigation-bar > .nav-item:hover a {
   color: whitesmoke;
 }
+.page {
+  display: none;
+}
+
+#home {
+  display: block;
+} 
+
 
 
 
@@ -85,3 +95,232 @@ a{
   height: auto;
   margin: 10px; /* Add space around the image */
 }
+
+
+/*ddfdfdf*/
+
+.main-container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ .container {
+  text-align: center;
+  margin: 10% auto;
+  width: 300px;
+  padding: 20px;
+  /* background-color: #f7f7f7; */
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+ .title-h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: 'Fredoka One', fantasy;
+  position: absolute;
+  top: 200px;
+  left: 45%;
+
+ }
+ .input-box {
+  display: flex;
+  /* flex-flow: column; */
+  align-items: center;
+  left: 43%;
+
+ }
+ .input-box i {
+  margin-right: 10px;
+  left: 39%;
+
+ }
+ .input-box input {
+  flex:1;
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Fredoka One', fantasy;
+  border-bottom: 1px solid #ececec;
+  background: none;
+  left: 40%;
+
+ }
+
+ .name {
+  transition: 0.5s;
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  left: 45%;
+
+ }
+ .name:hover {
+  position: absolute;
+  top: 195px;
+ }
+ .fa-user {
+  /* color: #fff; */
+  font-size: 1rem;
+  position: absolute;
+  top: 220px;
+  left: 15px;
+ }
+ .username {
+  transition: 0.5s;
+  position: absolute;
+  top: 280px;
+  left: 20px;
+ }
+ .username:hover {
+  position: absolute;
+  top: 275px;
+ }
+ .fa-envelope {
+  /* color: #fff; */
+  font-size: 1rem;
+  position: absolute;
+  top: 300px;
+  left: 15px;
+ }
+ .password {
+  transition: 0.5s;
+  position: absolute;
+  top: 360px;
+  left: 20px;
+ }
+ .password:hover {
+  position: absolute;
+  top: 355px;
+ }
+ .fa-lock {
+  /* color: #fff; */
+  font-size: 1rem;
+  position: absolute;
+  top: 380px;
+  left: 15px;
+  left: 45%;
+
+ }
+ .input-box input::placeholder {
+  font-size: 1rem;
+ }
+ .button-div {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-family: 'Fredoka One', fantasy;
+  display: flex;
+  /* flex-flow: column; */
+  align-items: center;
+
+ }
+ .btn {
+  padding: 15px;
+  border: none;
+  background: #232323;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 110px;
+  left: 220px;
+  left: 45%;
+ }
+ 
+ .fa-arrow-right {
+  /* color: #fff; */
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+ }
+ .title-h5 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Fredoka One', fantasy;
+  font-family: 'Fredoka One', fantasy;
+  position: absolute;
+  bottom: 20px;
+  left: 45%;
+
+ }
+ .title-h5 a {
+  color: rgb(125, 138, 181);
+  font-size: 1.25rem;
+  text-decoration: none;
+ }
+ 
+ .btn {
+     -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+             animation: heartbeat 1.5s ease-in-out infinite both;
+ }
+ @keyframes heartbeat {
+   from {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+     -webkit-transform-origin: center center;
+             transform-origin: center center;
+     -webkit-animation-timing-function: ease-out;
+             animation-timing-function: ease-out;
+   }
+   10% {
+     -webkit-transform: scale(0.91);
+             transform: scale(0.91);
+     -webkit-animation-timing-function: ease-in;
+             animation-timing-function: ease-in;
+   }
+   17% {
+     -webkit-transform: scale(0.98);
+             transform: scale(0.98);
+     -webkit-animation-timing-function: ease-out;
+             animation-timing-function: ease-out;
+   }
+   33% {
+     -webkit-transform: scale(0.87);
+             transform: scale(0.87);
+     -webkit-animation-timing-function: ease-in;
+             animation-timing-function: ease-in;
+   }
+   45% {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+     -webkit-animation-timing-function: ease-out;
+             animation-timing-function: ease-out;
+   }
+ }
+ @keyframes btn {
+   from {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+     -webkit-transform-origin: center center;
+             transform-origin: center center;
+     -webkit-animation-timing-function: ease-out;
+             animation-timing-function: ease-out;
+   }
+   10% {
+     -webkit-transform: scale(0.91);
+             transform: scale(0.91);
+     -webkit-animation-timing-function: ease-in;
+             animation-timing-function: ease-in;
+   }
+   17% {
+     -webkit-transform: scale(0.98);
+             transform: scale(0.98);
+     -webkit-animation-timing-function: ease-out;
+             animation-timing-function: ease-out;
+   }
+   33% {
+     -webkit-transform: scale(0.87);
+             transform: scale(0.87);
+     -webkit-animation-timing-function: ease-in;
+             animation-timing-function: ease-in;
+   }
+   45% {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+     -webkit-animation-timing-function: ease-out;
+             animation-timing-function: ease-out;
+   }
+ }
