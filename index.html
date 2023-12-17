@@ -1,123 +1,1207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Input Form</title>
-    <link rel="shortcut icon" href="Images/icon.webp" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
-    <!-- <link rel="stylesheet" type="text/css" href="CSS/style-login.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="CSS/style-singup.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/f28d00d089.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" page="IE=edge" />
+  <meta name="viewport" page="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Admin Panel</title>
 </head>
-<body>
-    <section class="home-screen">
-        <nav class="navigation-bar navbar navbar-expand-lg">
-            <img src="Images/icon.webp" alt="icon" srcset="">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav" id="navigation-bar">
-                    <li class="nav-item" id="navigation-item">
-                        <a id="navigation-link" class="nav-link text-*" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item" id="navigation-item">
-                        <a id="navigation-link" class="nav-link text-*" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item" id="navigation-item">
-                        <a id="navigation-link" class="nav-link text-*" href="#contact">Contact Us</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto" id="navigation-bar" style="margin-right: 100px;background-color: rgba(255, 255, 255, 0.489)">
-                    <li class="nav-item" id="navigation-item">
-                        <a id="navigation-link" class="nav-link text-*" style="font-weight: 200;" href="#signup">Signup</a>
-                    </li>
-                    <li class="nav-item" id="navigation-item">
-                        <a id="navigation-link" class="nav-link text-*" style="font-weight: 200;" href="#login">Login</a>
-                    </li>
-                </ul>
+
+<body style="background-color: #dad7cd;">
+  <!-- top navigation bar -->
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #344e41;">
+    <div class="container-fluid">
+      <button class="navbar-toggler shadow-none border-0 text-white" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#sidebar" aria-controls="offcanvasExample">
+        <span class="navbar-toggler-icon text-white" data-bs-target="#sidebar" style="color: white;"><i class="text-white bi bi-list"></i></span>
+      </button>
+      <span><img src="./images/logo.png" width="69" height="69" alt=""></span>
+      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold text-white" href="#">Government Polytechnic Ahmedabad</a>
+      <p id="username-text" class="text-white" style="padding-top: 13px; padding-left: 10px;">Hello,
+        User
+      </p>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle ms-2 text-white" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-person-fill"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item product-nav" href="#profile">Profile</a></li>
+            <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- top navigation bar -->
+  <!-- offcanvas -->
+  <div class="offcanvas offcanvas-start sidebar-nav" tabindex="-1" id="sidebar"style="margin-top:13px;background-color: #344e41">
+    <div class="offcanvas-body p-0">
+      <nav class="navbar-dark">
+        <ul class="navbar-nav">
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3">
+              TOOLS
             </div>
-        </nav>
-        <div class="content">
-            
-            <div id="home" class="page">
-                <div class="main container align-items-md-start">
-                    <div class="row">
-                        <div class="col-md-6 d-flex align-items-center justify-content-center">
-                            <div>
-                                <h1>Trouble managing your huge file and multiple folders?</h1>
-                                <h5 class="lead">Use our inventory management system and let us do the work for you</h5><br>
-                                <iframe id="frame" width="500" height="280" src="https://www.youtube.com/embed/xvFZjo5PgG0?si=kv-5RXdZ24cUBUaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <br><br>
-                            <img src="Images/banner.png" id="banner" class="img-fluid" alt="banner">
-                        </div>
-                    </div>
-                </div>
-                <div class="footer">3</div>
+          </li>
+          <li>
+            <a href="#dashboard" class="product-nav nav-link px-3 active">
+              <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#requests" class="product-nav nav-link px-3 active">
+              <span class="me-2"><i class="bi bi-bell-fill"></i></span>
+              <span>Supplies Request</span>
+            </a>
+          </li>
+          <li class="my-4">
+            <hr class="dropdown-divider bg-light" />
+          </li>
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+              Interface
             </div>
-            <div id="about" class="page">
-                <h1>under construction1</h1>
+          </li>
+          <li id="diffInventory">
+            <a class="nav-link px-3 sidebar-link inventory-link" data-bs-toggle="collapse" href="#layouts">
+              <span class="me-2"><i class="bi bi-box-seam"></i></span>
+              <span>Inventory</span>
+              <span class="ms-auto">
+                <span class="right-icon">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </span>
+            </a>
+            <div class="collapse" id="layouts">
+              <ul class="navbar-nav ps-3 invenContainer">
+                <li>
+                  <a href="#expandableProducts" class="inven1 product-nav nav-link px-3">
+                    <span class="me-2"><i class="bi bi-display"></i></span>
+                    <span>Expandable Products</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#consumableProducts" class="inven2 product-nav nav-link px-3">
+                    <span class="me-2"><i class="bi bi-pen"></i></span>
+                    <span>Consumable Products</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#furnitureProducts" class="inven3 product-nav nav-link px-3">
+                    <span class="me-2"><i class="bi bi-box2"></i></span>
+                    <span>Furniture Products</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div id="contact" class="page">
-                <h1>under construction2</h1>
+          </li>
+          
+          <!-- <style>
+            .collapse {
+              display: none;
+              transition: display;
+            }
+          
+            #diffInventory:hover .collapse {
+              display: block;
+            }
+          </style> -->
+          
+          <script>
+            // JavaScript to trigger the click event on hover
+            var inventoryLink = document.querySelector('.inventory-link');
+            var inventoryContainer = document.querySelectorAll('.invenContainer');
+            var inventories = document.querySelectorAll('.inven');
+            var l1=document.querySelector('.inven1')
+            var l2=document.querySelector('.inven2')
+            var l3=document.querySelector('.inven3')
+            inventoryLink.addEventListener('mouseenter', function() {
+              if(!inventoryLink.hasAttribute('aria-expanded')){
+                inventoryLink.click();
+              }
+            });
+            
+            inventoryContainer.forEach(container => {
+              container.addEventListener('mouseleave', function() {
+                if(!(l1.classList.contains('active') || l2.classList.contains('active') || l3.classList.contains('active'))){
+                  inventoryLink.click();
+                }
+              });
+            });
+
+            // a.addEventListener('mouseleave', function() {
+            //   this.click();
+              
+            // });
+
+          </script>
+          
+          <li>
+            <a class="product-nav nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#allocatedInventory">
+              <span class="me-2"><i class="bi bi-layout-split"></i></span>
+              <span>Allocated Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="#suppliers" class="product-nav nav-link px-3">
+              <span class="me-2"><i class="bi bi-clipboard2"></i></span>
+              <span>Suppliers</span>
+            </a>
+          </li>
+          <li class="my-4">
+            <hr class="dropdown-divider bg-light" />
+          </li>
+          <li>
+            <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+              Addons
             </div>
-            <div id="signup" class="page">
-                <div class="main-container-signup" >
-                    <div class="containerr">
-            
-                        <h1 class="title-h1 ">Sign up</h1>
-            
-                        <form action="#" method="get" accept-charset="utf-8">
-                            <div class="input-box">
-                                <i class="fas fa-envelope"></i>
-                                <input class="username" type="text" name="username" placeholder="Enter your username" />
-                            </div>
-                            <div class="input-box">
-                                <i class="fas fa-lock"></i>
-                                <input class="password" type="password" name="password" placeholder="Enter your password" />
-                            </div>
-                            <button class="btn" type="submit"><div class="button-div"><p id="login-text">Signup  </p><i class="fas fa-arrow-right"></i></div></button>
-                        </form>
-            
-                        <h5 class="title-h5">Signup or <a id="login-redirect" href="#login">Login</a></h5>
-            
-                    </div>
-            
-                </div>
-            </div>
-            <div id="login" class="page">
-                <!-- <div class="main-container-login"> -->
-                <div class="main-container-login" >
-                    <div class="containerr">
-            
-                        <h1 class="title-h1 ">Login</h1>
-            
-                        <form action="#" method="get" accept-charset="utf-8">
-                            <div class="input-box">
-                                <i class="fas fa-envelope"></i>
-                                <input class="username" type="text" name="username" placeholder="Enter your username" />
-                            </div>
-                            <div class="input-box">
-                                <i class="fas fa-lock"></i>
-                                <input class="password" type="password" name="password" placeholder="Enter your password" />
-                            </div>
-                            <button class="btn" type="submit"><div class="button-div"><p id="login-text">Login  </p><i class="fas fa-arrow-right"></i></div></button>
-                        </form>
-            
-                        <h5 class="title-h5">Login or <a id="signup-redirect" href="#signup">Singup</a></h5>
-            
-                    </div>
-            
-                </div>
-            </div>
+          </li>
+          <li>
+            <a href="#user-approve" class="product-nav nav-link px-3">
+              <span class="me-2"><i class="bi bi-person-fill-add"></i></span>
+              <span>Users</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- offcanvas -->
+  <main class="mt-5 pt-3">
+    <div id="dashboard" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 style="padding-top: 15px;">Dashboard</h4>
         </div>
-    </section>
-    <script type="module" src="JS/script.js"></script>
+      </div>
+      <div class="row">
+
+
+        <div class="col-md-4 mb-4">
+          <div class="card bg-warning text-black h-100">
+            <div class="card-body">
+              <div class="d-flex flex-row justify-content-between align-items-center">
+                <p class="fs-4" style="padding-right: 25px;">Pending Supply request</p>
+                <!-- <div class="flex-grow-1 justify-content-center align-items-center"> -->
+                <h1 class="display-2">
+                  45
+                </h1>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <a href="#requests" class="details-link-black card-redirect">View Details
+                <span class="ms-1">
+                  <i class=" bi bi-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-success text-white h-100">
+            <div class="card-body">
+              <div class="d-flex flex-row justify-content-between align-items-center">
+                <p class="fs-4" style="padding-right: 25px;">Suppliers<br>
+                <pre style="overflow:hidden;">                </pre>
+                </p>
+                <!-- <div class="flex-grow-1 justify-content-center align-items-center"> -->
+                <h1 class="display-2">
+                  23
+                </h1>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <a href="#supliers" class="details-link card-redirect">View Details
+                <span class="ms-1">
+                  <i class=" bi bi-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-danger text-white h-100">
+            <div class="card-body">
+              <div class="d-flex flex-row justify-content-between align-items-center">
+                <p class="fs-4" style="padding-right: 25px;">Pending User Request</p>
+                <!-- <div class="flex-grow-1 justify-content-center align-items-center"> -->
+                <h1 class="display-2">
+                  8
+                </h1>
+                <!-- </div> -->
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <a href="#user-approve" class="details-link card-redirect">View Details
+                <span class="ms-1">
+                  <i class=" bi bi-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-6">
+          <div class="card border-0 text-white h-100" style="background-color: rgba(0, 0, 0,0.6);">
+            <div class="card-body border-0 d-flex flex-column">
+              <div style="padding-top: 25px;" class="d-flex flex-row justify-content-between align-items-center">
+                <p class="fs-4" style="padding-right: 25px;">Inventory Items</p>
+                <!-- <div class="flex-grow-1 justify-content-center align-items-center"> -->
+                <h1 class="display-2">45012</h1>
+                <!-- </div> -->
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div class="col-md-6 mb-6">
+          <div class="card border-0  text-white h-100" style="background-color: rgba(0, 0, 0,0.6);">
+            <div class="card-body d-flex flex-column align-content-between justify-content-between">
+              <div class="text-white">
+                <div class="d-flex justify-content-between align-content-between">
+                  <p style="font-size: 20px;height: 33%;" class="m-0">Expandable Items</p>
+                  <p style="font-size: 20px;height: 33%;" class="m-0">43</p>
+                </div>
+              </div>
+              <hr class="m-0">
+              <div class="text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                  <p style="font-size: 20px;height: 33%;" class="m-0">Consumable Items</p>
+                  <p style="font-size: 20px;height: 33%;" class="m-0">12</p>
+                </div>
+              </div>
+              <hr class="m-0">
+              <div class="text-white">
+                <div class="d-flex justify-content-between">
+                  <p style="font-size: 20px;height: 33%;" class="m-0">Furniture Items</p>
+                  <p style="font-size: 20px;height: 33%;" class="m-0">32</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- price , deadstock num -->
+      <div style="padding-top: 20px;" class="row">
+        <div class="col-md-8 offset-md-2 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+              Sales in Last week
+            </div>
+            <div class="card-body">
+              <canvas class="chart" style="max-width: 100%; height: auto;"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="padding-top:30px;" class="row">
+        <div class="col-md-12 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-plus"></i></span> Add new product to the Store
+            </div>
+            <div class="card-body">
+              <form action="add_product.php" method="post" class="container" id="addingProd">
+                <div class="row">
+                  <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" class="form-control" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label style="padding-top: 10px;" for="name">Supplier Name:</label>
+                      <input type="text" id="supplier_name" name="supplier_name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="padding-top: 10px;" for="Category">Category:</label>
+                      <input type="text" id="Category" name="Category" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="padding-top: 10px;" for="price">Price:</label>
+                      <input type="number" id="price" name="price" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group ">
+                      <label style="padding-top: 10px;" for="type">Type of Product</label>
+                      <select id="type-select" class="form-select">
+                        <option value="Expandable">Expandable</option>
+                        <option value="Consumable">Consumable</option>
+                        <option value="Furniture">Furniture</option>
+                      </select>
+                      <div style="display: none;">
+                        <textarea name="hiddentype" id="hiddentype" cols="30" rows="10"></textarea>
+                      </div>
+
+                    </div>
+                    <div class="form-group">
+                      <label style="padding-top: 10px;" for="brand">Brand:</label>
+                      <input type="text" id="brand" name="brand" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label style="padding-top: 10px;" for="quantity">Quantity:</label>
+                      <input type="number" id="quantity" name="quantity" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+                <button onclick="addProd()" value="Submit" class="btn btn-primary "
+                  style="margin-top: 15px;">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+    <div id="expandableProducts" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Expandable Product List
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>Product Id</th>
+                      <th>Product Type</th>
+                      <th>Product Code</th>
+                      <th>Product Category</th>
+                      <th>Product Brand</th>
+                      <th>Product Name</th>
+                      <th>Product Price</th>
+                      <th>Product Quantity</th>
+                      <!-- <th>Supplied Date</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Monitor</td>
+                      <td>MON001</td>
+                      <td>Electronics</td>
+                      <td>TechVision</td>
+                      <td>High-Resolution Monitor</td>
+                      <td>300.00</td>
+                      <td>20</td>
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>CPU</td>
+                      <td>CPU002</td>
+                      <td>Electronics</td>
+                      <td>PowerTech</td>
+                      <td>Quad-Core Processor</td>
+                      <td>250.00</td>
+                      <td>15</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                  <!-- Row 3 -->
+                  <tr>
+                      <td>3</td>
+                      <td>Laptop</td>
+                      <td>LPT003</td>
+                      <td>Electronics</td>
+                      <td>SpeedyNote</td>
+                      <td>Lightweight Laptop</td>
+                      <td>800.00</td>
+                      <td>10</td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr>
+                      <td>4</td>
+                      <td>Tabvar</td>
+                      <td>TAB004</td>
+                      <td>Electronics</td>
+                      <td>TouchPad</td>
+                      <td>Android Tabvar</td>
+                      <td>150.00</td>
+                      <td>25</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                  <!-- Row 5 -->
+                  <tr>
+                      <td>5</td>
+                      <td>Printer</td>
+                      <td>PRT005</td>
+                      <td>Electronics</td>
+                      <td>PrintMaster</td>
+                      <td>Wireless Printer</td>
+                      <td>200.00</td>
+                      <td>12</td>
+                  </tr>
+                  <!-- Continue adding rows until you have 15 -->
+                  <!-- Row 6 -->
+                  <tr>
+                      <td>6</td>
+                      <td>Keyboard</td>
+                      <td>KBD006</td>
+                      <td>Electronics</td>
+                      <td>TypeTech</td>
+                      <td>Mechanical Keyboard</td>
+                      <td>120.00</td>
+                      <td>30</td>
+                  </tr>
+                  <!-- Row 7 -->
+                  <tr>
+                      <td>7</td>
+                      <td>Mouse</td>
+                      <td>MS007</td>
+                      <td>Electronics</td>
+                      <td>ClickPro</td>
+                      <td>Wireless Gaming Mouse</td>
+                      <td>80.00</td>
+                      <td>40</td>
+                  </tr>
+                  <!-- Continue adding rows until you have 15 -->
+                  <!-- Add more rows as needed -->
+                  </table>
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="consumableProducts" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Consumable Product List
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>Product Id</th>
+                      <th>Product Code</th>
+                      <th>Product Category</th>
+                      <th>Product Brand</th>
+                      <th>Product Name</th>
+                      <th>Product Price</th>
+                      <th>Product Quantity</th>
+                      <!-- <th>Supplied Date</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>101</td>
+                      <td>CHLK001</td>
+                      <td>Stationery</td>
+                      <td>WriteRight</td>
+                      <td>Chalk White</td>
+                      <td>2.50</td>
+                      <td>500</td>
+                  </tr>
+                  <tr>
+                      <td>102</td>
+                      <td>BOOK002</td>
+                      <td>Stationery</td>
+                      <td>SmartPrint</td>
+                      <td>College Ruled Notebook</td>
+                      <td>5.00</td>
+                      <td>100</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                  <!-- Row 3 -->
+                  <tr>
+                      <td>103</td>
+                      <td>PEN003</td>
+                      <td>Stationery</td>
+                      <td>InkMaster</td>
+                      <td>Ballpoint Pen</td>
+                      <td>1.50</td>
+                      <td>300</td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr>
+                      <td>104</td>
+                      <td>ERAS004</td>
+                      <td>Stationery</td>
+                      <td>CleanErase</td>
+                      <td>Whiteboard Eraser</td>
+                      <td>3.00</td>
+                      <td>50</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                  <!-- Row 5 -->
+                  <tr>
+                      <td>105</td>
+                      <td>PAPER005</td>
+                      <td>Stationery</td>
+                      <td>PrintPerfect</td>
+                      <td>Printer Paper</td>
+                      <td>10.00</td>
+                      <td>200</td>
+                  </tr>
+                  <!-- Continue adding rows until you have 15 -->
+                  <!-- Row 6 -->
+                  <tr>
+                      <td>106</td>
+                      <td>STPLR006</td>
+                      <td>Stationery</td>
+                      <td>StapleMaster</td>
+                      <td>Stapler</td>
+                      <td>7.50</td>
+                      <td>75</td>
+                  </tr>
+                  <!-- Row 7 -->
+                  <tr>
+                      <td>107</td>
+                      <td>MARKR007</td>
+                      <td>Stationery</td>
+                      <td>ColorMark</td>
+                      <td>Highlighter Set</td>
+                      <td>5.00</td>
+                      <td>120</td>
+                  </tr>
+                  <!-- Continue adding rows until you have 15 -->
+                  <!-- Add more rows as needed -->
+                  </table>
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="furnitureProducts" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Furniture Product List
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>Product Id</th>
+                      <th>Product Code</th>
+                      <th>Product Category</th>
+                      <th>Product Brand</th>
+                      <th>Product Name</th>
+                      <th>Product Price</th>
+                      <th>Product Quantity</th>
+                      <!-- <th>Supplied Date</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>201</td>
+                      <td>FRNT001</td>
+                      <td>Furniture</td>
+                      <td>HomeComfort</td>
+                      <td>Sofa Set</td>
+                      <td>500.00</td>
+                      <td>10</td>
+                  </tr>
+                  <tr>
+                      <td>202</td>
+                      <td>TBL002</td>
+                      <td>Furniture</td>
+                      <td>WoodCraft</td>
+                      <td>Dining Table</td>
+                      <td>300.00</td>
+                      <td>15</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                  <!-- Row 3 -->
+                  <tr>
+                      <td>203</td>
+                      <td>BD001</td>
+                      <td>Furniture</td>
+                      <td>SleepWell</td>
+                      <td>Double Bed</td>
+                      <td>700.00</td>
+                      <td>8</td>
+                  </tr>
+                  <!-- Row 4 -->
+                  <tr>
+                      <td>204</td>
+                      <td>WRS001</td>
+                      <td>Furniture</td>
+                      <td>OfficeElite</td>
+                      <td>Wardrobe</td>
+                      <td>450.00</td>
+                      <td>12</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                  <!-- Row 5 -->
+                  <tr>
+                      <td>205</td>
+                      <td>CHRS002</td>
+                      <td>Furniture</td>
+                      <td>ComfortSeat</td>
+                      <td>Office Chair</td>
+                      <td>150.00</td>
+                      <td>20</td>
+                  </tr>
+                  <!-- Continue adding rows until you have 15 -->
+                  <!-- Row 6 -->
+                  <tr>
+                      <td>206</td>
+                      <td>DSK003</td>
+                      <td>Furniture</td>
+                      <td>WorkSmart</td>
+                      <td>Study Desk</td>
+                      <td>250.00</td>
+                      <td>18</td>
+                  </tr>
+                  <!-- Row 7 -->
+                  <tr>
+                      <td>207</td>
+                      <td>SHLF004</td>
+                      <td>Furniture</td>
+                      <td>OrganizeIt</td>
+                      <td>Bookshelf</td>
+                      <td>180.00</td>
+                      <td>25</td>
+                  </tr>
+                  <!-- Continue adding rows until you have 15 -->
+                  <!-- Add more rows as needed -->
+                  </table>
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="allocatedInventory" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Inventory List
+            </div>
+            <div class="card-body">
+              <div style="margin-bottom: 15px;">
+                <label for="department-select" class="form-label">Select Department</label>
+                <select id="department-select" class="form-select">
+                  <option value="all">All Departments</option>
+                  <option value="Computer">Computer Engineering</option>
+                  <option value="IT">Information Technology Engineering</option>
+                  <option value="Automobile">Automobile Engineering</option>
+                  <option value="Civil">Civil Engineering</option>
+                  <option value="Biomedical">Biomedical Engineering</option>
+                  <option value="Electronics And Communication">Electronics and Communication Engineering</option>
+                  <option value="Electrical">Electrical Engineering</option>
+                  <option value="Mechanical">Mechanical Engineering</option>
+                </select>
+              </div>
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr data-department="Computer">
+                      <th>Product Type</th>
+                      <th>Product Brand</th>
+                      <th>Product Category</th>
+                      <th>Product Name</th>
+                      <th>Requested Quantity</th>
+                      <th>Supplied Quantity</th>
+                      <th>Faculty</th>
+                      <th>Supplied at</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-department="IT">
+                      <td>Laptop</td>
+                      <td>Dell</td>
+                      <td>Electronics</td>
+                      <td>Inspiron 15</td>
+                      <td>10</td>
+                      <td>5</td>
+                      <td>John Doe</td>
+                      <td>2023-01-15</td>
+                    </tr>
+                    <tr data-department="Mechanical">
+                      <td>Printer</td>
+                      <td>HP</td>
+                      <td>Electronics</td>
+                      <td>OfficeJet Pro</td>
+                      <td>5</td>
+                      <td>2</td>
+                      <td>Jane Smith</td>
+                      <td>2023-02-10</td>
+                    </tr>
+                    <!-- Additional Rows -->
+                    <tr data-department="Computer">
+                      <td>Chair</td>
+                      <td>OfficeMax</td>
+                      <td>Furniture</td>
+                      <td>Executive Chair</td>
+                      <td>20</td>
+                      <td>15</td>
+                      <td>Mark Johnson</td>
+                      <td>2023-03-05</td>
+                    </tr>
+                    <tr data-department="IT">
+                      <td>Desk</td>
+                      <td>IKEA</td>
+                      <td>Furniture</td>
+                      <td>Study Desk</td>
+                      <td>15</td>
+                      <td>10</td>
+                      <td>Lisa Brown</td>
+                      <td>2023-04-20</td>
+                    </tr>
+                    <tr data-department="Mechanical">
+                      <td>Stool</td>
+                      <td>Home Depot</td>
+                      <td>Furniture</td>
+                      <td>Adjustable Stool</td>
+                      <td>25</td>
+                      <td>20</td>
+                      <td>Chris Anderson</td>
+                      <td>2023-05-12</td>
+                    </tr>
+                    <tr data-department="Electrical">
+                      <td>Chalk</td>
+                      <td>Stationery World</td>
+                      <td>Consumable</td>
+                      <td>White Chalk</td>
+                      <td>100</td>
+                      <td>80</td>
+                      <td>Amy White</td>
+                      <td>2023-06-08</td>
+                    </tr>
+                    <tr data-department="Computer">
+                      <td>Marker</td>
+                      <td>Office Supplies Inc.</td>
+                      <td>Consumable</td>
+                      <td>Highlighter Marker</td>
+                      <td>50</td>
+                      <td>40</td>
+                      <td>Robert Green</td>
+                      <td>2023-07-15</td>
+                    </tr>
+                    <tr data-department="IT">
+                      <td>Pen</td>
+                      <td>Pen Paradise</td>
+                      <td>Consumable</td>
+                      <td>Ballpoint Pen</td>
+                      <td>200</td>
+                      <td>180</td>
+                      <td>Emily Davis</td>
+                      <td>2023-08-22</td>
+                    </tr>
+                    <tr data-department="Biomedical">
+                      <td>Register</td>
+                      <td>Book Haven</td>
+                      <td>Consumable</td>
+                      <td>Class Register</td>
+                      <td>30</td>
+                      <td>25</td>
+                      <td>Michael Smith</td>
+                      <td>2023-09-10</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                    <tr data-department="Electrical">
+                      <td>Laptop</td>
+                      <td>Dell</td>
+                      <td>Electronics</td>
+                      <td>Inspiron 15</td>
+                      <td>10</td>
+                      <td>5</td>
+                      <td>John Doe</td>
+                      <td>2023-01-15</td>
+                    </tr>
+                    <tr data-department="Computer">
+                      <td>Printer</td>
+                      <td>HP</td>
+                      <td>Electronics</td>
+                      <td>OfficeJet Pro</td>
+                      <td>5</td>
+                      <td>2</td>
+                      <td>Jane Smith</td>
+                      <td>2023-02-10</td>
+                    </tr>
+                    <!-- Additional Rows -->
+                    <tr data-department="Biomedical">
+                      <td>Chair</td>
+                      <td>OfficeMax</td>
+                      <td>Furniture</td>
+                      <td>Executive Chair</td>
+                      <td>20</td>
+                      <td>15</td>
+                      <td>Mark Johnson</td>
+                      <td>2023-03-05</td>
+                    </tr>
+                    <tr data-department="Biomedical">
+                      <td>Desk</td>
+                      <td>IKEA</td>
+                      <td>Furniture</td>
+                      <td>Study Desk</td>
+                      <td>15</td>
+                      <td>10</td>
+                      <td>Lisa Brown</td>
+                      <td>2023-04-20</td>
+                    </tr>
+                    <tr data-department="Civil">
+                      <td>Stool</td>
+                      <td>Home Depot</td>
+                      <td>Furniture</td>
+                      <td>Adjustable Stool</td>
+                      <td>25</td>
+                      <td>20</td>
+                      <td>Chris Anderson</td>
+                      <td>2023-05-12</td>
+                    </tr>
+                    <tr data-department="Computer">
+                      <td>Chalk</td>
+                      <td>Stationery World</td>
+                      <td>Consumable</td>
+                      <td>White Chalk</td>
+                      <td>100</td>
+                      <td>80</td>
+                      <td>Amy White</td>
+                      <td>2023-06-08</td>
+                    </tr>
+                    <tr data-department="Civil">
+                      <td>Marker</td>
+                      <td>Office Supplies Inc.</td>
+                      <td>Consumable</td>
+                      <td>Highlighter Marker</td>
+                      <td>50</td>
+                      <td>40</td>
+                      <td>Robert Green</td>
+                      <td>2023-07-15</td>
+                    </tr>
+                    <tr data-department="Civil">
+                      <td>Pen</td>
+                      <td>Pen Paradise</td>
+                      <td>Consumable</td>
+                      <td>Ballpoint Pen</td>
+                      <td>200</td>
+                      <td>180</td>
+                      <td>Emily Davis</td>
+                      <td>2023-08-22</td>
+                    </tr>
+                    <tr data-department="Civil">
+                      <td>Register</td>
+                      <td>Book Haven</td>
+                      <td>Consumable</td>
+                      <td>Class Register</td>
+                      <td>30</td>
+                      <td>25</td>
+                      <td>Michael Smith</td>
+                      <td>2023-09-10</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                                        
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var departmentSelect = document.getElementById("department-select");
+    
+        var rows = document.querySelectorAll("#example tbody tr");
+    
+        departmentSelect.addEventListener("change", function () {
+          var selectedDepartment = departmentSelect.value;
+    
+          rows.forEach(function (row) {
+            console.log(row.getAttribute('data-department'))
+            var departmentColumn = row.getAttribute('data-department') // Assuming department is in the third column
+    
+            if (selectedDepartment === "all" || departmentColumn === selectedDepartment) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+    
+    
+    <div id="user-approve" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Inventory List
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>User</th>
+                      <th>Email</th>
+                      <th>Request Date</th>
+
+                      <th class="">Action</th>
+                      <!-- <th>Reject</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Kavan Bhavsar
+                      </td>
+                      <td>
+                        abc@gmail.com
+                      </td>
+                      <td>
+                        12-12-2023
+                      </td>
+                      <td>
+                        <button class="btn btn-success" onclick="approve_user('<?= $value[0] ?>')">
+                          <i class="bi bi-check-circle"></i> Approve
+                        </button>
+                        <button class="btn btn-danger" onclick="reject_user('<?= $value[0] ?>')">
+                          <i class="bi bi-x-circle"></i> Reject
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Bhavya Bagadia
+                      </td>
+                      <td>
+                        bhavya@gmail.com
+                      </td>
+                      <td>
+                        10-12-2023
+                      </td>
+                      <td>
+                        <button class="btn btn-success" onclick="approve_user('<?= $value[0] ?>')">
+                          <i class="bi bi-check-circle"></i> Approve
+                        </button>
+                        <button class="btn btn-danger" onclick="reject_user('<?= $value[0] ?>')">
+                          <i class="bi bi-x-circle"></i> Reject
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Khush Panchal
+                      </td>
+                      <td>
+                        xyz@gmail.com
+                      </td>
+                      <td>
+                        07-12-2023
+                      </td>
+                      <td>
+                        <button class="btn btn-success" onclick="approve_user('<?= $value[0] ?>')">
+                          <i class="bi bi-check-circle"></i> Approve
+                        </button>
+                        <button class="btn btn-danger" onclick="reject_user('<?= $value[0] ?>')">
+                          <i class="bi bi-x-circle"></i> Reject
+                        </button>
+                      </td>
+                    </tr>
+
+                    <!-- Add more rows as needed -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="suppliers" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Suppliers List
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>Supplier Id</th>
+                      <th>Name</th>
+                      <th>Area</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($supplier_data as $value) { ?>
+                    <tr>
+                      <td>
+                        <?= $value[0] ?>
+                      </td>
+                      <td>
+                        <?= $value[1] ?>
+                      </td>
+                      <td>
+                        <?= $value[2] ?>
+                      </td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="requests" class="page container-fluid">
+      <div class="row">
+        <div class="col-md-12 mb-3 p-4">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span>Incoming Supply Requests
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="example" class="table table-striped data-table" style="width: 100%">
+                  <thead>
+                    <tr>
+                      <th>Request Id</th>
+                      <th>Username</th>
+                      <th>Product Category</th>
+                      <th>Product Name</th>
+                      <th>Requested Quantity</th>
+                      <th>Requested at</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        1043
+                      </td>
+                            Computer
+                      <td>
+                        Consumable
+                      </td>
+                      <td>
+                        Registers
+                      </td>
+                      <td>
+                        5
+                      </td>
+                      <td>
+                        11-12-2023
+                      </td>
+                      <td>
+                        <div class="d-flex flex-row">
+
+                          <button class="btn btn-success" onclick="approve_qty()">
+                            <i class="bi bi-check-circle"></i> Approve
+                          </button>
+                          <button style="margin-left: 10px;" class="btn btn-danger" onclick="reject_qty()">
+                            <i class="bi bi-x-circle"></i> Reject
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="profile" class="page container-fluid">
+      <div class="row" style="margin-top: 100px;">
+        <div class="col-md-6 offset-md-3">
+          <div class="card mt-5 fs-4">
+            <div class="card-header">
+              My Profile
+            </div>
+            <div class="card-body py-3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Username:</strong>
+                  <?= $user[1] ?>
+                </li>
+                <li class="list-group-item"><strong>Email:</strong>
+                  <?= $user[2] ?>
+                </li>
+                <li class="list-group-item"><strong>Created At:</strong>
+                  <?= $user[4] ?>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <style>
+
+  </style>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script src="./js/jquery.dataTables.min.js"></script>
+  <script src="./js/dataTables.bootstrap5.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
+    function approve_user(username) {
+      if (confirm(`Are you sure you want to approve ${username} user?`)) {
+        document.getElementById("approveusername").value = username;
+        document.querySelector(".approve").submit();
+        alert("User added successfully!");
+      }
+    }
+    function reject_user(username) {
+      if (confirm(`Are you sure you want to reject ${username} user?`)) {
+        document.getElementById("rejectusername").value = username;
+        document.querySelector(".reject").submit();
+        alert("User rejected successfully!");
+      }
+    }
+    function addProd() {
+      var prod_type = document.getElementById("type-select").value;
+      console.log(prod_type);
+      document.getElementById("hiddentype").value = prod_type;
+      document.querySelector(".addingProd").submit();
+      alert("Product added successfully!");
+    }
+  </script>
 </body>
+
 </html>
